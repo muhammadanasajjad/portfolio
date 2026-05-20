@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-webtui-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ask Anas - AI</title>
+<style>
+    @layer base, utils, components;
+    @import url('https://cdn.jsdelivr.net/npm/@webtui/css@0.1.6/dist/full.css');
+</style>
+<link rel="stylesheet" href="../css/ai.css" />
+</head>
+<body>
+
+<!-- Tab bar (mirrors opencode's chat/files/diff tabs) -->
+<!-- <div id="tabbar"> -->
+<!--     <div class="tab active">chat</div> -->
+<!--     <div class="tab">context</div> -->
+<!--     <div class="tab">history</div> -->
+<!--     <span id="status" style="margin-left:auto">Ready</span> -->
+<!-- </div> -->
+
+<!-- Messages view -->
+<div is-="view" id="main-view">
+    <div is-="view-content" id="messages">
+
+        <!-- Initial capabilities block, mirrors opencode's Capabilities/Caveats -->
+        <!-- <div class="caveat-block"> -->
+        <!--     <span is-="badge" cap-="square" variant-="background0" class="badge-orange">Capabilities</span> -->
+        <!--     <p>Tool calling, structured output (JSON), reasoning, streaming — all supported.</p> -->
+        <!--     <span is-="badge" cap-="square" variant-="background0" class="badge-orange">Caveats</span> -->
+        <!--     <ul marker-="bullet"> -->
+        <!--         <li>Can hit rate limits with no way to pay for more</li> -->
+        <!--         <li>Context is loaded from <code>aboutme.md</code></li> -->
+        <!--         <li>Use <code>ctrl+l</code> to clear the session</li> -->
+        <!--     </ul> -->
+        <!-- </div> -->
+
+        <!-- Initial meta row -->
+        <!-- <div class="msg-meta"> -->
+        <!--     <span class="meta-icon">◻</span> -->
+        <!--     <span is-="badge" cap-="square" variant-="background0" class="badge-mode">ask</span> -->
+        <!--     <span class="meta-sep">·</span> -->
+        <!--     <span is-="badge" cap-="square" variant-="background0" class="badge-profile">Anas</span> -->
+        <!--     <span class="meta-provider">MiniMax M2.5</span> -->
+        <!-- </div> -->
+
+        <!-- <div is-="separator" cap-="bisect"></div> -->
+
+    </div>
+</div>
+
+<!-- Input bar, mirrors opencode's bottom bar -->
+<div id="input-area">
+    <div id="input-bar-inner">
+        <span class="input-prompt">$</span>
+        <input id="input" placeholder='Ask anything... "What has Anas worked on?"' autocomplete="off" />
+    </div>
+    <div id="statusbar">
+        <span class="sb-mode">ask</span>
+        <span class="sb-sep">·</span>
+        <span class="sb-profile">Anas</span>
+        <span class="sb-provider">MiniMax M2.5</span>
+        <span class="sb-right">
+            <span class="sb-hint"><kbd>ctrl+l</kbd> clear</span>
+            <span class="sb-hint"><kbd>↑↓</kbd> history</span>
+            <span class="sb-hint"><kbd>enter</kbd> send</span>
+        </span>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="../js/ai.js"></script>
+</body>
+</html>
